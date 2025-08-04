@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Good Morning, Dr. <span th:text="${doctor}"></span>,</p>
+<p>Please find the expected patients list for today below:</p>
+<ol>
+    <li th:each="patient : ${patients}" th:text="${patient}"></li>
+</ol>
+<br>
+
+<p>Regards,</p>
+<p>Doctor Buddy</p>
+</body>
+</html>

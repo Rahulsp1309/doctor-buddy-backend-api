@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Hey <span th:text="${patient.name}"></span>,</p>
+<p>Hope you are doing well. A gentle reminder that your appointment is coming in 5 days for <span th:text="${patient.disease}"></span></p>
+<br>
+<p>Regards,</p>
+<p>Dr. <span th:text="${doctor}"></span></p>
+</body>
+</html>

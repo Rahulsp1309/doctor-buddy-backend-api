@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Muktai Multispeciality Hospital</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        hr {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #333;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Muktai Multispeciality Hospital</h1>
+<hr/>
+<h3 style="text-align:center;">Prescription</h3>
+<p>Patient: <span th:text="${patient}"></span></p>
+<p>Doctor: Dr. <span th:text="${doctor}"></span></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Medicine</th>
+        <th>Dosage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${dosages}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
