@@ -3,6 +3,7 @@ package com.example.security.service;
 import com.example.security.dao.DoctorRepo;
 import com.example.security.dto.DoctorDto;
 import com.example.security.entity.Doctor;
+import com.example.security.exception.UserNotFoundException;
 import com.example.security.helper.DoctorMapper;
 import com.example.security.helper.PatientMapper;
 import jakarta.persistence.EntityNotFoundException;
@@ -31,7 +32,7 @@ public class DoctorServiceImpl implements  DoctorService{
 
     @Override
     public DoctorDto getDoctorById(int id) {
-        return doctorMapper.mapToDto(doctorRepo.findById(id).orElseThrow(()-> new EntityNotFoundException("doctor not found")));
+        return doctorMapper.mapToDto(doctorRepo.findById(id).orElseThrow(()-> new UserNotFoundException("doctor not found")));
     }
 
     @Override
